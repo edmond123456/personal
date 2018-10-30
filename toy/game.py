@@ -1,4 +1,6 @@
 # -*- coding:utf-8 -*-
+
+# https://www.cnblogs.com/lykyl/p/5946102.html
 '''
 经典俄罗斯方块
 游戏基于python2.7、pygame1.9.2b8编写。
@@ -192,7 +194,7 @@ def sysInit():
     pg.mouse.set_visible(False)
     
     #游戏全局变量初始化
-    defaultFont=pg.font.Font("res/font/yh.ttf",16)        #yh.ttf这个字体文件请自行上网搜索下载，如果找不到就随便用个ttf格式字体文件替换一下。
+    defaultFont=pg.font.Font("/Users/junjie_hua/personal/toy/times-new-roman/design.graffiti.Kadafia.ttf",16)        #yh.ttf这个字体文件请自行上网搜索下载，如果找不到就随便用个ttf格式字体文件替换一下。
     nowBlock=None
     nextBlock=None
     gameOver=False
