@@ -7,6 +7,8 @@ import numpy
 import matplotlib.pyplot as plot
 
 cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture('/Users/junjie_hua/onedrive/OneDrive - Maeda Laboratory/Pepper/ICAT2018/Teaser_Video/20181016.mp4')
+
 
 while(1):
     # get a frame

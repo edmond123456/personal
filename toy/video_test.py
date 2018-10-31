@@ -18,7 +18,7 @@ while(1):
     gray_img = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
     # threshold for image, with threshold 50. 超えなかった場合は、黒いピクセルに置き換える
     _, threshold_img = cv2.threshold(gray_img, 50, 255, cv2.THRESH_BINARY)
-    _, contours, hier= cv2.findContours(threshold_img,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)
+    _, contours, _= cv2.findContours(threshold_img,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
     # 各輪郭に対する処理
     for i in range(0, len(contours)):
 
@@ -33,11 +33,7 @@ while(1):
         if len(contours[i]) > 0:
             rect = contours[i]
             x, y, w, h = cv2.boundingRect(rect)
-            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-    # show image
-    #threshold_img = cv2.cvtColor(threshold_img, cv2.COLOR_GRAY2RGB)
-    #rectangle
-    #cv2.rectangle(frame,(0,0),(200,200),(0,255,0),3)
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 2)
     # show a frame
     cv2.imshow("capture", frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
