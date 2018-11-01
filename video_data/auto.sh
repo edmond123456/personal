@@ -17,10 +17,4 @@ convert +append data1.png data2.png data3.png  1.png
 
 
 
-
-
-
-
-
-
 #echo OK!
