@@ -6,8 +6,9 @@ Reference
 
 (https://github.com/GeekLiB/AR-BXT-AR4Python)
 
+(https://www.cnblogs.com/lilinwei340/p/6474170.html)
 
-
+video_fig_2.py video+figure
 
 
 #homepage

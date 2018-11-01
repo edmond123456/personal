@@ -1,47 +1,22 @@
-###   https://blog.csdn.net/huanglu_thu13/article/details/52337013
-###    https://blog.csdn.net/liuweiyuxiang/article/details/80591640
-### https://qiita.com/neriai/items/448a36992e308f4cabe2
+from PIL import Image
+#加载底图
+base_img = Image.open('/Users/junjie_hua/personal/toy/mark_in_scene.png')
+# 可以查看图片的size和mode，常见mode有RGB和RGBA，RGBA比RGB多了Alpha透明度
+# print base_img.size, base_img.mode
+box = (166, 64, 320, 337)  # 底图上需要P掉的区域
 
+#加载需要P上去的图片
+tmp_img = Image.open('/Users/junjie_hua/personal/toy/mark.png')
+#这里可以选择一块区域或者整张图片
+#region = tmp_img.crop((0,0,304,546)) #选择一块区域
+#或者使用整张图片
+region = tmp_img
 
-import cv2  
-import numpy
-import matplotlib.pyplot as plot
-
-cap = cv2.VideoCapture(0)
-#cap = cv2.VideoCapture('/Users/junjie_hua/onedrive/OneDrive - Maeda Laboratory/Pepper/ICAT2018/Teaser_Video/20181016.mp4')
-
-
-while(1):
-    # get a frame
-    ret, frame = cap.read()
-    # convert image to grayscale
-    gray_img = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-    # threshold for image, with threshold 50. 超えなかった場合は、黒いピクセルに置き換える
-    _, threshold_img = cv2.threshold(gray_img, 50, 255, cv2.THRESH_BINARY)
-    _, contours, hier= cv2.findContours(threshold_img,cv2.RETR_LIST,cv2.CHAIN_APPROX_NONE)
-    # 各輪郭に対する処理
-    for i in range(0, len(contours)):
-
-        # 輪郭の領域を計算
-        area = cv2.contourArea(contours[i])
-
-        # ノイズ（小さすぎる領域）と全体の輪郭（大きすぎる領域）を除外
-        if area < 1e3 or 1e5 < area:
-            continue
-
-        # 外接矩形
-        if len(contours[i]) > 0:
-            rect = contours[i]
-            x, y, w, h = cv2.boundingRect(rect)
-            cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-    # show image
-    #threshold_img = cv2.cvtColor(threshold_img, cv2.COLOR_GRAY2RGB)
-    #rectangle
-    #cv2.rectangle(frame,(0,0),(200,200),(0,255,0),3)
-    # show a frame
-    cv2.imshow("capture", frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
-cap.release()
-cv2.destroyAllWindows() 
+#使用 paste(region, box) 方法将图片粘贴到另一种图片上去.
+# 注意，region的大小必须和box的大小完全匹配。但是两张图片的mode可以不同，合并的时候回自动转化。如果需要保留透明度，则使用RGMA mode
+#提前将图片进行缩放，以适应box区域大小
+# region = region.rotate(180) #对图片进行旋转
+region = region.resize((box[2] - box[0], box[3] - box[1]))
+base_img.paste(region, box)
+#base_img.show() # 查看合成的图片
+base_img.save('/Users/junjie_hua/personal/toy/out.png') #保存图片
