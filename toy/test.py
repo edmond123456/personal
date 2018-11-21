@@ -8,19 +8,22 @@ import numpy as np
 cap = cv2.VideoCapture(0)
 
 #定义摄像头的分辨率
-cap.set(3,1080)
-cap.set(4,720)
+#cap.set(3,1080)
+#cap.set(4,720)
 
 #大量的错和坑出现在这里
 #第一个参数是路径和文件名
 #第二个参数是视频格式，“MPEG”是一**种标准格式，百度fourcc可见各种格式
 #第二个参数（fourcc）如果设置为-1，允许实时选择视频格式
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+#fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+fourcc = cv2.VideoWriter_fourcc(*'DIVX')
 #fourcc=-1**
 
 # 第三个参数则是镜头快慢的，20为正常，小于二十为慢镜头**
-out = cv2.VideoWriter('/Users/junjie_hua/personal/toy/test_video_audio.avi',fourcc,20,(1080,720))
+#out = cv2.VideoWriter('/Users/junjie_hua/personal/toy/test_video_audio.avi',fourcc,20,(1080,720))
 #out = cv2.VideoWriter('/Users/junjie_hua/onedrive/OneDrive - Maeda Laboratory/test_video_audio.avi',fourcc,20,(640,480))
+#out = cv2.VideoWriter('C:/Users/saku_/Documents/GitHub/personal/toy/test_video_audio.avi',fourcc,20,(640,480))
+out = cv2.VideoWriter('C:/Users/saku_/Documents/GitHub/personal/toy/test_video_audio.avi',fourcc,20,(640,480))
 
 while True:
 
