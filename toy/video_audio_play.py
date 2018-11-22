@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
  
 
-
-###  python C:\Users\saku_\Documents\GitHub\personal\toy/test.py
+###  https://www.learnopencv.com/read-write-and-display-a-video-using-opencv-cpp-python/
+###  python C:\Users\saku_\Documents\GitHub\personal\toy/video_audio_play.py
  
 import cv2
 import numpy as np
