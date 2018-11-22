@@ -1,7 +1,7 @@
 #coding=utf-8
 
 ###   https://blog.csdn.net/m0_37606112/article/details/78289802
-###  python C:\Users\saku_\Documents\GitHub\personal\toy/test.py
+###  python C:\Users\saku_\Documents\GitHub\personal\toy/video_audio_record.py
 
 import cv2
 import numpy as np
@@ -31,7 +31,7 @@ while True:
 
     ret,frame = cap.read()  # 获取图像
     if ret == True:
-        frame = cv2.flip(frame, 1)# 在帧上进行操作
+        #frame = cv2.flip(frame, 1)# 在帧上进行操作
 
         cv2.imshow("frame", frame)  # 显示帧
 
