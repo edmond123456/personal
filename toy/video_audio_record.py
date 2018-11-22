@@ -12,6 +12,13 @@ cap = cv2.VideoCapture(0)
 #定义摄像头的分辨率
 #cap.set(3,1080)
 #cap.set(4,720)
+cap.set(cv2.CAP_PROP_FPS, 60)           # カメラFPSを60FPSに設定
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1980) # カメラ画像の横幅を1280に設定
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1020) # カメラ画像の縦幅を720に設定
+
+#print (cap.get(cv2.CAP_PROP_FPS))
+#print (cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+#print (cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 #大量的错和坑出现在这里
 #第一个参数是路径和文件名
@@ -25,7 +32,7 @@ fourcc = cv2.VideoWriter_fourcc(*'DIVX')
 #out = cv2.VideoWriter('/Users/junjie_hua/personal/toy/test_video_audio.avi',fourcc,20,(1080,720))
 #out = cv2.VideoWriter('/Users/junjie_hua/onedrive/OneDrive - Maeda Laboratory/test_video_audio.avi',fourcc,20,(640,480))
 #out = cv2.VideoWriter('C:/Users/saku_/Documents/GitHub/personal/toy/test_video_audio.avi',fourcc,20,(640,480))
-out = cv2.VideoWriter('C:/Users/saku_/Documents/GitHub/personal/toy/test_video_audio.avi',fourcc,20,(640,480))
+out = cv2.VideoWriter('C:/Users/saku_/Documents/GitHub/personal/toy/test_video_audio.avi',fourcc,20,(1920,1080))
 
 while True:
 

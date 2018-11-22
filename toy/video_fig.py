@@ -10,7 +10,13 @@ import matplotlib.pyplot as plot
 
 cap = cv2.VideoCapture(0)
 #cap = cv2.VideoCapture('/Users/junjie_hua/onedrive/OneDrive - Maeda Laboratory/Pepper/ICAT2018/Teaser_Video/20181016.mp4')
+cap.set(cv2.CAP_PROP_FPS, 60)           # カメラFPSを60FPSに設定
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1980) # カメラ画像の横幅を1280に設定
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1020) # カメラ画像の縦幅を720に設定
 
+print (cap.get(cv2.CAP_PROP_FPS))
+print (cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+print (cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 while(1):
     # get a frame
