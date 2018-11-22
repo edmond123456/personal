@@ -1,8 +1,7 @@
 #coding=utf-8
 
 ###   https://blog.csdn.net/m0_37606112/article/details/78289802
-
-
+###  python C:\Users\saku_\Documents\GitHub\personal\toy/test.py
 
 import cv2
 import numpy as np
