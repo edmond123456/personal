@@ -8,7 +8,7 @@ import numpy as np
 
 # 选取摄像头，0为笔记本内置的摄像头，1,2···为外接的摄像头**
 cap = cv2.VideoCapture(0)
-
+cv2.namedWindow("[frame]") 
 #定义摄像头的分辨率
 #cap.set(3,1080)
 #cap.set(4,720)
@@ -39,7 +39,7 @@ while True:
     ret,frame = cap.read()  # 获取图像
     if ret == True:
         #frame = cv2.flip(frame, 1)# 在帧上进行操作
-
+        cv2.moveWindow('frame',0,0)
         cv2.imshow("frame", frame)  # 显示帧
 
         out.write(frame) # 保存视频

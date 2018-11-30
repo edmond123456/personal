@@ -10,6 +10,7 @@ canvas1.pack()
 
 def video_audio_record():
     cap = cv2.VideoCapture(0)
+    cv2.namedWindow("[frame]") 
     cap.set(cv2.CAP_PROP_FPS, 60)           # カメラFPSを60FPSに設定
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1980) # カメラ画像の横幅を1280に設定
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1020) # カメラ画像の縦幅を720に設定
@@ -18,6 +19,7 @@ def video_audio_record():
     while True:
         ret,frame = cap.read()  # 获取图像
         if ret == True:
+            cv2.moveWindow('frame',0,0)
             cv2.imshow("frame", frame)  # 显示帧
             out.write(frame) # 保存视频
             if cv2.waitKey(1) & 0xFF == ord('q'):#按下‘q’退出
@@ -33,13 +35,15 @@ def video_audio_record():
 
 def video_audio_replay():
     cap = cv2.VideoCapture('C:/Users/saku_/Documents/GitHub/personal/toy/test_video_audio.avi')
+    cv2.namedWindow("[Frame]") 
     if (cap.isOpened()== False): 
         print("Error opening video stream or file")
     while(cap.isOpened()):
         ret, frame = cap.read()
         if ret == True:
+            cv2.moveWindow('Frame',0,0)
             cv2.imshow('Frame',frame)
-            if cv2.waitKey(25) & 0xFF == ord('q'):
+            if cv2.waitKey(60) & 0xFF == ord('q'):
                 break
         else: 
             break
