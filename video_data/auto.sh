@@ -1,10 +1,16 @@
 #!/usr/bin/bash                 
 #!/usr/bin/python
 
-read -p "please input address of the video files: "  ip_video  #  /Users/junjie_hua/personal/video_data
-read -p "please input name of the video files: "  name_video  #  video.mp4
-read -p "please input address where you want to save: "  ip_save #  /Users/junjie_hua/personal/video_data
-read -p "please input fps: "  fps_fig #  3
+ip_video=/Users/junjie_hua/personal/video_data
+name_video=video.mp4
+ip_save=/Users/junjie_hua/personal/video_data
+fps_fig=3
+
+
+#echo ip_video
+#echo name_video
+#echo ip_save
+#echo $fps_fig
 
 cd $ip_save
 #pwd
@@ -60,4 +66,3 @@ for file in *.png
     do rm "$file"
 done
 echo DELETE DONE!
-
