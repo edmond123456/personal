@@ -2,7 +2,9 @@
 動画から切り出した静止画をSfMLearnerに入力して推論を行う
 
 
+[oldversion.py](video_data/oldversion.sh)
 
+[auto.sh](video_data/auto.sh)
 
 # Reference
 (https://blog.csdn.net/qq_38643064/article/details/80355932)
