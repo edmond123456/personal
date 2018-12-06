@@ -1,7 +1,10 @@
-# toy
-object recongnition based on AR
+# Guidance
+動画から切り出した静止画をSfMLearnerに入力して推論を行う
 
-Reference
+
+
+
+# Reference
 (https://blog.csdn.net/qq_38643064/article/details/80355932)
 
 (https://github.com/GeekLiB/AR-BXT-AR4Python)
@@ -11,5 +14,5 @@ Reference
 video_fig_2.py video+figure
 
 
-#homepage
+# Homepage
 [Junjie Hua](https://edmond123456.github.io/)
