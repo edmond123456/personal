@@ -48,7 +48,7 @@ add_2=2
 devide=3
 while(($int<=$[$num-$add_2]))
 do
-  convert +append "data"$[$int]".png" "data"$[$int+$add_1]".png" "data"$[$int+$add_2]".png" ""$int".jpg"
+  convert +append "data"$[$int]".png" "data"$[$int+$add_1]".png" "data"$[$int+$add_2]".png" ""im$int".jpg"
   let "int++"
 done
 
