@@ -1,1 +1,0 @@
-del %UserProfile%\copytranslator.json
