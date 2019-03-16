@@ -12,10 +12,12 @@ from ttk import *
 
 def graph(text):
     tmptext = entry.get()
+    if tmptext == "":
+        tmptext = "waiting\bfor\binput"
     tmptext = "$"+tmptext+"$"
 
     ax.clear()
-    ax.text(0.2, 0.6, tmptext, fontsize = 50)  
+    ax.text(0.2, 0.6, tmptext, fontsize = 20)  
     canvas.draw()
 
 
