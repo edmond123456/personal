@@ -1,4 +1,9 @@
-""" https://www.youtube.com/watch?v=cuKQ9w9nr1o"""
+"""
+ https://www.youtube.com/watch?v=cuKQ9w9nr1o
+https://api.slack.com/methods/chat.postMessage/test
+https://api.slack.com/apps/AH25TSLQ4/general
+
+"""
 
 import requests
 import json
