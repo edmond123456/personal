@@ -8,8 +8,8 @@ https://api.slack.com/apps/AH25TSLQ4/general
 import requests
 import json
 
-web_hook_url = 'https://hooks.slack.com/services/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'
+web_hook_url = 'https://hooks.slack.com/services/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'
 
-slack_msg ={'text': ' 飲み会やりたい'}
+slack_msg ={'text': ' test'}
 
 requests.post(web_hook_url,data=json.dumps(slack_msg))
