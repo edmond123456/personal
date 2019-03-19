@@ -8,7 +8,7 @@ ser = serial.Serial('COM4', 115200)  # open serial port
 while True:
     if ser.isOpen():
         #data = ser.read()
-        data = ser.read(5)
+        data = ser.read(3)
         print (data)
     else:
         break

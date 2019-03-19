@@ -18,10 +18,10 @@ slack_msg ={'text': ' test from python'}
 while True:
     if ser.isOpen():
         #data = ser.read()
-        data = ser.read(5)
-        if data == b'\x00\x00\x00\x00\x00':
-            print("yes")
-            #requests.post(web_hook_url,data=json.dumps(slack_msg))
-        time.sleep()
+        data = ser.read(3)
+        if data == b'\x00\x00\x00':
+            #print("yes")
+            requests.post(web_hook_url,data=json.dumps(slack_msg))
+        time.sleep(1)
     else:
         break
