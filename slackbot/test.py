@@ -1,27 +1,17 @@
+import better_exceptions
 
-"""
- https://www.youtube.com/watch?v=cuKQ9w9nr1o
-https://api.slack.com/methods/chat.postMessage/test
-https://api.slack.com/apps/AH25TSLQ4/general
+foo = 52
 
-"""
 
-import requests
-import json
-import time
-import serial
-ser = serial.Serial('COM4', 115200)  # open serial port
+def shallow(a, b):
+    deep(a + b)
 
-web_hook_url = 'https://hooks.slack.com/services/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'
 
-slack_msg ={'text': ' test from python'}
-while True:
-    if ser.isOpen():
-        #data = ser.read()
-        data = ser.read(3)
-        if data == b'\x00\x00\x00':
-            #print("yes")
-            requests.post(web_hook_url,data=json.dumps(slack_msg))
-        time.sleep(1)
-    else:
-        break
+def deep(val):
+    global foo
+    assert val > 10 and foo == 60
+
+
+bar = foo - 50
+shallow(bar, 15)
+shallow(bar, 2)
