@@ -1,17 +1,5 @@
-import better_exceptions
+import numpy as np
 
-foo = 52
+a = [['2', '1.2', '4.2'], ['0', '10', '0.3'], ['1', '5', '0']]
 
-
-def shallow(a, b):
-    deep(a + b)
-
-
-def deep(val):
-    global foo
-    assert val > 10 and foo == 60
-
-
-bar = foo - 50
-shallow(bar, 15)
-shallow(bar, 2)
+array = np.random.rand(5,3)
