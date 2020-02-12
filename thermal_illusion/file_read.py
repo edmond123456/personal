@@ -30,5 +30,6 @@ figure read succeeded!
 
 img_trans = img/100 -273.15
 print(img_trans.shape)
+
 #plt.imshow(img_trans, cmap=cm.plasma,vmin=20,vmax=40) 
 #plt.show()
