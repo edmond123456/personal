@@ -7,9 +7,9 @@ from matplotlib import pyplot as plt
 from matplotlib import cm
 
 #img = Image.open('C:/Users/saku_/Documents/GitHub/personal/thermal_illusion/test_video.tiff')
-img = Image.open('C:/Users/Hayato/Documents/GitHub/personal/thermal_illusion/test_video.tiff')
+img = Image.open('C:/Users/Hayato/Documents/GitHub/personal/thermal_illusion/20200217.tiff')
 
-for i in range(87):
+for i in range(6601):
     try:
         img.seek(i)
         #img.save('C:/Users/saku_/Documents/GitHub/personal/thermal_illusion/frames/'+'%s.tif'%(i,))

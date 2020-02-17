@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 from matplotlib import cm
 
 #img_path = 'C:/Users/saku_/Documents/GitHub/personal/thermal_illusion/'
-img_path = 'C:/Users/Hayato/Documents/GitHub/personal/thermal_illusion/'
+img_path = 'C:/Users/Hayato/Documents/GitHub/personal/thermal_illusion/exp1/figure/'
 
 
 img_list = os.listdir(img_path)
@@ -30,7 +30,7 @@ figure read succeeded!
 """
 
 img_trans = img/100 -273.15
-plt.imshow(img_trans, cmap=cm.plasma,vmin=20,vmax=45) 
+plt.imshow(img_trans, cmap=cm.plasma,vmin=28,vmax=38) 
 pp = plt.colorbar(orientation= "vertical")
 plt.axis([0,79,0,59])
 plt.show()
