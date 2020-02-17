@@ -17,8 +17,8 @@ for img_name in img_list:
         #保持不变读取
         img = cv2.imread(os.path.join(img_path, img_name), -1)
         print('non-transform reading')
-        print(img.dtype)
-        print(img.shape)
+        #print(img.dtype)
+        #print(img.shape)
         #默认读取方式
         #img = cv2.imread(os.path.join(img_path, img_name))
         #print('transform reading')
@@ -30,7 +30,7 @@ figure read succeeded!
 """
 
 img_trans = img/100 -273.15
-print(img_trans.shape)
-
-plt.imshow(img_trans, cmap=cm.plasma,vmin=20,vmax=40) 
+plt.imshow(img_trans, cmap=cm.plasma,vmin=20,vmax=45) 
+pp = plt.colorbar(orientation= "vertical")
+plt.axis([0,79,0,59])
 plt.show()
