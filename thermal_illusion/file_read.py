@@ -5,7 +5,8 @@ import numpy as np
 from matplotlib import pyplot as plt 
 from matplotlib import cm
 
-img_path = 'C:/Users/saku_/Documents/GitHub/personal/thermal_illusion/'
+#img_path = 'C:/Users/saku_/Documents/GitHub/personal/thermal_illusion/'
+img_path = 'C:/Users/Hayato/Documents/GitHub/personal/thermal_illusion/'
 
 
 img_list = os.listdir(img_path)
@@ -31,5 +32,5 @@ figure read succeeded!
 img_trans = img/100 -273.15
 print(img_trans.shape)
 
-#plt.imshow(img_trans, cmap=cm.plasma,vmin=20,vmax=40) 
-#plt.show()
+plt.imshow(img_trans, cmap=cm.plasma,vmin=20,vmax=40) 
+plt.show()
