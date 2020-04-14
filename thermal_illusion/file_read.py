@@ -9,6 +9,7 @@ from matplotlib import cm
 img_path = 'C:/Users/Hayato/Documents/GitHub/personal/thermal_illusion/exp1/figure/'
 
 
+
 img_list = os.listdir(img_path)
 
 for img_name in img_list:
