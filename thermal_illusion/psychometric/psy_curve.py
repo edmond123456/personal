@@ -1,19 +1,26 @@
+# https://psychology.stackexchange.com/questions/13347/how-can-i-fit-a-psychometric-function-such-that-the-minimum-is-50-chance-level
+# chance = 0.5  # between 0 and 1
+# y = chance + (1-chance) / (1 + np.exp(-k*(x-x0)))
+
 import numpy as np
+import pylab
 from scipy.optimize import curve_fit
-import scipy as sy
-import matplotlib.pyplot as plt
 
-d = np.array([75, 80, 90, 95, 100, 105, 110, 115, 120, 125], dtype=float)
-p2 = np.array([6, 13, 25, 29, 29, 29, 30, 29, 30, 30], dtype=float) / 30. # scale to 0..1
+def sigmoid(x, x0, k):
+     y = 1 / (1 + np.exp(-k*(x-x0)))
+     return y
 
-# psychometric function
-def pf(x, alpha, beta):
-    return 1. / (1 + np.exp( -(x-alpha)/beta ))
+xdata = np.array([0.0,1.0,3.0,5.0,7.0,9.0])
+ydata = np.array([0.6,0.875,0.9,0.925,0.925,0.925])
 
-# fitting
-par0 = sy.array([100., 1.]) # use some good starting values, reasonable default is [0., 1.]
-par, mcov = curve_fit(pf, d, p2, par0)
-print(par)
-plt.plot(d, p2, 'ro')
-plt.plot(d, pf(d, par[0], par[1]))
-plt.show()
+popt, pcov = curve_fit(sigmoid, xdata, ydata)
+print (popt)
+
+x = np.linspace(-10, 10, 50)
+y = sigmoid(x, *popt)
+
+pylab.plot(xdata, ydata, 'o', label='data')
+pylab.plot(x,y, label='fit')
+pylab.ylim(0, 1.00)
+pylab.legend(loc='best')
+pylab.show()
