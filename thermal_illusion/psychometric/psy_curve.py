@@ -7,7 +7,8 @@ import pylab
 from scipy.optimize import curve_fit
 
 def sigmoid(x, x0, k):
-     y = 0.5 + (1-0.5) / (1 + np.exp(-k*(x-x0)))
+     # y = 0.5 + (1-0.5) / (1 + np.exp(-k*(x-x0)))
+     y =  1 / (1 + np.exp(-k*(x-x0)))
      return y
 
 xdata = np.array([0.0,1.0,3.0,5.0,7.0,9.0])
