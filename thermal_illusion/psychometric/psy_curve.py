@@ -2,6 +2,7 @@
 # chance = 0.5  # between 0 and 1
 # y = chance + (1-chance) / (1 + np.exp(-k*(x-x0)))
 
+
 import numpy as np
 import pylab
 from scipy.optimize import curve_fit
