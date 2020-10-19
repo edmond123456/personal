@@ -19,22 +19,22 @@ popt, pcov = curve_fit(sigmoid, xdata, ydata)
 print (popt)
 
 x = np.linspace(0, 10, 50)
-y = sigmoid(x, *popt)
+y = sigmoid(x, *popt)*100 # percentage
 
-pylab.plot(xdata, ydata, 'o', label='data')
-pylab.plot(x,y, label='fit')
+pylab.plot(xdata, ydata*100, 'o', label='data')
+pylab.plot(x,y, 'r',label='fit')
 pylab.xlim(0, 10)
-pylab.ylim(0, 1.00)
+pylab.ylim(0, 100)
 pylab.xlabel("Time Interval(s)")
-pylab.ylabel("Hot Judgement")
+pylab.ylabel("% Hot Judgement")
 #pylab.legend(loc='best')
 
 # plot 75% threshold
-datax1 = [0,0.3,0.4,0.5,0.52]
-datay1 = [0.75,0.75,0.75,0.75,0.75]
-plot1 = pylab.plot(datax1,datay1,'--g')
+datax1 = [0,0.52]
+datay1 = [75,75]
+plot1 = pylab.plot(datax1,datay1,'--r')
 datax2 = [0.52,0.52]
-datay2 = [0.0,0.75]
-plot1 = pylab.plot(datax2,datay2,'--g')
+datay2 = [0.0,75]
+plot1 = pylab.plot(datax2,datay2,'--r')
 
 pylab.show()
