@@ -25,8 +25,8 @@ pylab.plot(xdata, ydata*100, 'o', label='data')
 pylab.plot(x,y, 'r',label='fit')
 pylab.xlim(0, 10)
 pylab.ylim(0, 100)
-pylab.xlabel("Time Interval(s)")
-pylab.ylabel("% Hot Judgement")
+pylab.xlabel("Time Interval(s)", fontsize = 16)
+pylab.ylabel("% Hot Judgement", fontsize =16)
 #pylab.legend(loc='best')
 
 # plot 75% threshold
@@ -37,4 +37,7 @@ datax2 = [0.52,0.52]
 datay2 = [0.0,75]
 plot1 = pylab.plot(datax2,datay2,'--r')
 
+pylab.text(0.25, -5, 'Threshold', color="red")
+pylab.text(0.4, -8, '0.52', color="red")
+pylab.text(-0.5, 73, '75', color="red")
 pylab.show()
